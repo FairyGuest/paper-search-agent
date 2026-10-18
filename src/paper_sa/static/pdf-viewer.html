@@ -1,0 +1,7 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PDF 阅读器</title><link rel="stylesheet" href="/pdf-viewer.css"><script type="module" src="/pdf-viewer.js"></script></head>
+<body>
+  <header class="pdf-toolbar"><button id="previous" title="上一页" aria-label="上一页">‹</button><label><input id="page-number" type="number" min="1" value="1" aria-label="页码"> / <span id="page-count">—</span></label><button id="next" title="下一页" aria-label="下一页">›</button><div class="spacer"></div><button id="zoom-out" aria-label="缩小">−</button><button id="fit" title="适合宽度">适宽</button><button id="zoom-in" aria-label="放大">+</button></header>
+  <main id="pdf-container"><div id="pdf-status" role="status">正在加载 PDF…</div><canvas id="pdf-canvas" aria-label="PDF 当前页" hidden></canvas></main>
+</body></html>

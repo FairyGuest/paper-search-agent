@@ -1,0 +1,19 @@
+.workspace-path {
+  overflow-wrap: anywhere;
+  font-size: 12px;
+  line-height: 1.8;
+  margin: 10px 0;
+}
+
+.workspace-hint {
+  margin-top: 18px;
+  line-height: 1.9;
+}
+
+.workspace-stale {
+  margin: 16px 24px 0;
+}
+
+#workspace-settings .settings-actions {
+  flex-wrap: wrap;
+}

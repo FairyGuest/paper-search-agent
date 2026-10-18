@@ -1,0 +1,251 @@
+main.reader-view {
+  max-width: none;
+  padding: 26px 22px 18px;
+}
+
+.reader-view .reader-heading {
+  margin-bottom: 18px;
+}
+
+.reader-view .reader-heading h1 {
+  max-width: 1200px;
+}
+
+.reader-view .reader-layout {
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, .95fr);
+  gap: 12px;
+  height: calc(100vh - 220px);
+  min-height: 610px;
+}
+
+.reader-view .pdf-pane,
+.reader-view .reader-right,
+.reader-notes {
+  min-width: 0;
+  height: auto;
+}
+
+.reader-notes {
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: white;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.reader-view .pane-toolbar {
+  padding: 10px 12px;
+  flex-shrink: 0;
+  gap: 6px;
+}
+
+.reader-view .pane-toolbar > span:first-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.reader-view .pane-toolbar .subtle-label {
+  font-size: 9px;
+  text-align: right;
+}
+
+.reader-notes .pane-toolbar button {
+  font-size: 10px;
+  padding: 6px 8px;
+}
+
+.reader-notes .pane-toolbar button .icon {
+  width: 13px;
+  height: 13px;
+}
+
+#reader-notes-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+#reader-notes-content > .empty-state {
+  margin: 18px 12px;
+  padding: 32px 13px;
+}
+
+#reader-notes-content .empty-state h3 {
+  line-height: 1.8;
+}
+
+.reader-note-picker {
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border-bottom: 1px solid var(--line);
+}
+
+.reader-note-picker label {
+  font-size: 10px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.reader-note-picker select {
+  flex: 1;
+  width: 0;
+  font-size: 11px;
+  padding: 6px 8px;
+}
+
+.reader-notes .editor-shell {
+  flex: 1;
+  border: none;
+  border-radius: 0;
+}
+
+.reader-notes .editor-toolbar {
+  padding: 10px;
+  gap: 6px;
+}
+
+.reader-notes .editor-toolbar button {
+  font-size: 10px;
+  padding: 5px 7px;
+}
+
+.reader-notes .save-state {
+  flex-basis: 100%;
+  order: 1;
+  margin: 2px 0 0;
+}
+
+.reader-notes .note-title {
+  font-size: 13px;
+  padding: 13px 12px;
+}
+
+.reader-notes .editor-body,
+.reader-notes .editor-body.preview-mode {
+  grid-template-columns: minmax(0, 1fr);
+  min-height: 0;
+  overflow: auto;
+}
+
+.reader-notes .note-editor {
+  font-size: 12px;
+  padding: 15px;
+  min-height: 250px;
+}
+
+.reader-notes .preview-mode .note-editor {
+  display: none;
+}
+
+.reader-notes .note-preview {
+  padding: 15px;
+  border-left: none;
+  max-height: none;
+}
+
+.reader-view .chat-messages {
+  padding: 17px 14px;
+}
+
+.reader-view .message-actions {
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.reader-view .scope-label {
+  flex-basis: 100%;
+}
+
+.reader-view .chat-input-area {
+  padding: 11px 12px 9px;
+}
+
+.selection-hint {
+  color: #82956f;
+  font-size: 10px;
+  line-height: 1.7;
+  margin-bottom: 9px;
+}
+
+.message-content::selection,
+.message-content ::selection {
+  background: #d8e9c7;
+  color: #24432e;
+}
+
+.markdown blockquote.paper-original {
+  border-left-color: #779666;
+  background: #f0f5eb;
+  padding: 9px 13px;
+  color: #485f3e;
+  border-radius: 0 6px 6px 0;
+}
+
+.paper-original strong:first-child {
+  font-size: 11px;
+  color: #5c794b;
+}
+
+.chat-selection-toolbar {
+  position: fixed;
+  z-index: 90;
+  padding: 4px;
+  border: 1px solid #d7e2ce;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 6px 25px #2541272b;
+  max-width: calc(100vw - 16px);
+}
+
+.chat-selection-toolbar button {
+  padding: 9px 12px;
+  font-size: 12px;
+}
+
+@media (max-width: 1100px) {
+  .reader-view .reader-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    height: auto;
+  }
+
+  .reader-view .pdf-pane,
+  .reader-view .reader-right {
+    height: 650px;
+  }
+
+  .reader-notes {
+    grid-column: 1 / -1;
+    height: 520px;
+  }
+}
+
+@media (max-width: 760px) {
+  main.reader-view {
+    padding: 20px 14px;
+  }
+
+  .reader-view .reader-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .reader-view .pdf-pane {
+    height: 65vh;
+    min-height: 380px;
+  }
+
+  .reader-view .reader-right {
+    height: 75vh;
+    min-height: 480px;
+  }
+
+  .reader-notes {
+    height: 580px;
+  }
+}
